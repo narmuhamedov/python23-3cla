@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tv Show detail</title>
+</head>
+<body>
+<center>
+    <button><a href="/tv_show/">Back</a></button>
+    <h3>Название фильма</h3>
+  <h1>{{object_detail.title}}</h1>
+  <img src="{{object_detail.image.url}}" alt="" width="200" height="200">
+    <h3>Описание</h3>
+  <p>{{object_detail.description}}</p>
+    <h3>колличество серий</h3>
+  <p><b>{{object_detail.quantity}}</b></p>
+    <h3>Жанр</h3>
+  <p><b>{{object_detail.genre}}</b></p>
+    <h3>Дата загрузки</h3>
+  <p><i>{{object_detail.created_date}}</i></p>
+</center>
+
+</body>
+</html>
