@@ -1,0 +1,132 @@
+body {
+  background: #1D1B26;
+}
+.sliding-button {
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  position: relative;
+  padding: 15px 30px;
+  border: 1px solid;
+  border-image: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
+  border-image-slice: 1;
+  margin: 10px 20px;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  overflow: hidden;
+  letter-spacing: 2px;
+  transition: .8s cubic-bezier(.165, .84, .44, 1);
+}
+.sliding-button:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 0;
+  width: 100%;
+  z-index: -1;
+  color: white;
+  background: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
+  transition: .8s cubic-bezier(.165, .84, .44, 1);
+}
+.sliding-button:hover {
+  background: rgba(255, 255, 255, 0);
+}
+.sliding-button:hover:before {
+  bottom: 0%;
+  top: auto;
+  height: 100%;
+}
+
+
+/*content*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #606060;
+    font-size: 14px;
+}
+.container {
+    max-width: 960px;
+    margin: 50px auto;
+    padding: 0 15px;
+    background: white;
+}
+.post-image img {
+    width: 100%;
+    margin: 0 0 20px 0;
+}
+.post h1 {
+    color: #222;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.post-meta {
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+time,
+.author {
+    padding-right: 26px;
+    position: relative;
+}
+time:after,
+.author:after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #666;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+p {
+    line-height: 1.5;
+    margin-bottom: 1em;
+}
+@media (min-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+    .container {
+        padding: 0 45px;
+    }
+    .post-image img {
+        float: right;
+        width: 300px;
+        margin: 0 0 20px 20px;
+    }
+    .post-header {
+        padding-left: 26px;
+        border-left: 4px solid #D8D8D8;
+        margin-left: -30px;
+    }
+}
+/*footer*/
+footer {
+  color: #D8D8D8;
+}
+
+
+/*!*уникальный селектор*!*/
+/*body{*/
+/*    background-color: blueviolet;*/
+/*    color: darkgreen;*/
+/*    font-family: Arial;*/
+/*}*/
+
+/*!*Селектор тега*!*/
+/*h1{*/
+/*    color: crimson;*/
+/*    font-family: "Bodoni MT";*/
+/*}*/
+/*!*селектор класса*!*/
+/*.red{*/
+/*    color: salmon;*/
+/*}*/

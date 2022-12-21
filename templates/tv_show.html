@@ -1,22 +1,43 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Tv Show</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-<div>
-    <ul>
-        <button><a href="http://127.0.0.1:8000/admin/">Админка</a></button>
-      {% for i in show_object %}
-        <li>{{i.title}}</li>
-        <img src="{{i.image.url}}" alt="" width="200" height="200">
-        <br>
-        <button><a href="/tv_show_detail/{{i.id}}">More</a></button>
-        <hr>
-        <br>
-        {% endfor %}
-    </ul>
+
+    <a href="" class="sliding-button">Home</a>
+    <a href="" class="sliding-button">Contact</a>
+    <a href="" class="sliding-button">About Us</a>
+    <a href="" class="sliding-button">Product</a>
+    <a href="http://127.0.0.1:8000/admin/" class="sliding-button">Admin</a>
+     <a href="/add_tv_show/" class="sliding-button">Add New TvShow</a>
+
+    {% for i in show_object %}
+    <div class="container">
+    <div class="post">
+        <div class="post-image">
+            <img src="{{i.image.url}}">
+        </div>
+        <div class="post-content">
+            <div class="post-header">
+                <h1>{{i.title}}</h1>
+                <button><a href="/tv_show_detail/{{i.id}}">More</a></button>
+            </div>
+            <p>
+                {{i.description}}
+            </p>
+        </div>
+    </div>
 </div>
+{% endfor %}
+
+<footer>
+   <footer>
+    Copyright Python 23-3
+  </footer>
+</footer>
 </body>
 </html>
