@@ -17,3 +17,9 @@ class TvShow(models.Model):
 
     def __str__(self):
         return self.title
+
+class CommentTvShow(models.Model):
+    choice_show = models.ForeignKey(TvShow, on_delete=models.CASCADE,
+                                    related_name='comment_object')
+    text = models.TextField()
+    created_date = models.DateTimeField(auto_now_add=True)
