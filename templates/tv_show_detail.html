@@ -11,27 +11,31 @@
     <div class="post">
         <div class="post-header">
             <div class="post-image">
-                <img src="{{object_detail.image.url}}">
+                <img src="{{object.image.url}}">
             </div>
-            <h1>{{object_detail.title}}</h1>
-            <h2>{{object_detail.quantity}}</h2>
-            <h2>{{object_detail.genre}}</h2>
-            <h2>{{object_detail.created_date}}</h2>
+            <h1>{{object.title}}</h1>
+            <h2>{{object.quantity}}</h2>
+            <h2>{{object.genre}}</h2>
+            <h2>{{object.created_date}}</h2>
         </div>
         <div class="post-content">
             <p>
-                {{object_detail.description}}
+                {{object.description}}
             </p>
         </div>
 
-        <button><a href="/tv_show/{{object_detail.id}}/update/">Update</a></button>
-        <button><a href="/tv_show/{{object_detail.id}}/delete/">Delete</a></button>
+        <button><a href="/tv_show/{{object.id}}/update/">Update</a></button>
+        <button><a href="/tv_show/{{object.id}}/delete/">Delete</a></button>
 
     </div>
 </div>
-
-
-
-
+<center>
+<hr>
+{% for i in object.comment_object.all %}
+<h1>{{i.text}}</h1>
+<p>{{i.created_date}}</p>
+{% endfor %}
+<hr>
+    </center>
 </body>
 </html>
