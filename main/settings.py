@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'blog',
     'tv_show',
     'about',
+    'parser_app',
 ]
 
 MIDDLEWARE = [
