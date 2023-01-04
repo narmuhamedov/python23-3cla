@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'tv_show',
     'about',
     'parser_app',
+    'custom_users',
 ]
 
 MIDDLEWARE = [
