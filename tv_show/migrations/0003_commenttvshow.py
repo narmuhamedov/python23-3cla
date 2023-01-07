@@ -7,17 +7,32 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('tv_show', '0002_tvshow_created_date'),
+        ("tv_show", "0002_tvshow_created_date"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='CommentTvShow',
+            name="CommentTvShow",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('text', models.TextField()),
-                ('created_date', models.DateTimeField(auto_now_add=True)),
-                ('choice_show', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='comment_object', to='tv_show.tvshow')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("text", models.TextField()),
+                ("created_date", models.DateTimeField(auto_now_add=True)),
+                (
+                    "choice_show",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="comment_object",
+                        to="tv_show.tvshow",
+                    ),
+                ),
             ],
         ),
     ]

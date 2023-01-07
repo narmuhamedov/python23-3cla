@@ -3,24 +3,25 @@ from django.http import HttpResponse
 from . import models, forms
 from django.views import generic
 
-#не полное отображение
+# не полное отображение
 class TvShowView(generic.ListView):
-    template_name = 'tv_show.html'
+    template_name = "tv_show.html"
     queryset = models.TvShow.objects.all()
 
     def get_queryset(self):
         return models.TvShow.objects.all()
 
+
 # def tv_show_view(request):
 #     show = models.TvShow.objects.all()
 #     return render(request, 'tv_show.html', {'show_object': show})
 
-#детальное отображение об объекте
+# детальное отображение об объекте
 class TvShowDetailView(generic.DetailView):
-    template_name = 'tv_show_detail.html'
+    template_name = "tv_show_detail.html"
 
     def get_object(self, **kwargs):
-        show_id = self.kwargs.get('id')
+        show_id = self.kwargs.get("id")
         return get_object_or_404(models.TvShow, id=show_id)
 
 
@@ -29,16 +30,18 @@ class TvShowDetailView(generic.DetailView):
 #     return render(request, 'tv_show_detail.html', {'object_detail': show_detail,
 #                                                    })
 
-#добавление tvshow
+# добавление tvshow
 class TvShowCreateView(generic.CreateView):
-    template_name = 'create_tv_show.html'
+    template_name = "create_tv_show.html"
     form_class = forms.ShowForm
     queryset = models.TvShow.objects.all()
-    success_url = '/tv_show/'
+    success_url = "/tv_show/"
 
     def form_valid(self, form):
         print(form.cleaned_data)
         return super(TvShowCreateView, self).form_valid(form=form)
+
+
 # def add_tv_show_view(request):
 #     method = request.method
 #     if method == 'POST':
@@ -50,14 +53,14 @@ class TvShowCreateView(generic.CreateView):
 #
 #     return render(request, 'create_tv_show.html', {'form': form})
 
-#обновление тв шоу
+# обновление тв шоу
 class TvShowUpdateView(generic.UpdateView):
-    template_name = 'tv_show_update.html'
+    template_name = "tv_show_update.html"
     form_class = forms.ShowForm
-    success_url = '/tv_show/'
+    success_url = "/tv_show/"
 
     def get_object(self, **kwargs):
-        show_id = self.kwargs.get('id')
+        show_id = self.kwargs.get("id")
         return get_object_or_404(models.TvShow, id=show_id)
 
     def form_valid(self, form):
@@ -76,14 +79,15 @@ class TvShowUpdateView(generic.UpdateView):
 #     return render(request, 'tv_show_update.html', {'form': form, 'object': show_object})
 
 
-#Удаление Тв шоу
+# Удаление Тв шоу
 class TvShowDeleteView(generic.DeleteView):
-    template_name = 'confirm_delete.html'
-    success_url = '/tv_show/'
+    template_name = "confirm_delete.html"
+    success_url = "/tv_show/"
 
     def get_object(self, **kwargs):
-        show_id = self.kwargs.get('id')
+        show_id = self.kwargs.get("id")
         return get_object_or_404(models.TvShow, id=show_id)
+
 
 # def delete_tv_show_view(request, id):
 #     show_object = get_object_or_404(models.TvShow, id=id)

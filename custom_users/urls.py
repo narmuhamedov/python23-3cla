@@ -5,10 +5,13 @@ from .forms import LoginForm
 app_name = "users"
 
 urlpatterns = [
-    path('register/', views.Registation.as_view(), name='registration'),
-    path('login/', views.NewLoginView.as_view(template_name='login.html',
-                                              authentication_form=LoginForm),
-         name='login'),
-    path('users/', views.UserListView.as_view(), name='user_list'),
-
+    path("register/", views.Registation.as_view(), name="registration"),
+    path(
+        "login/",
+        views.NewLoginView.as_view(
+            template_name="login.html", authentication_form=LoginForm
+        ),
+        name="login",
+    ),
+    path("users/", views.UserListView.as_view(), name="user_list"),
 ]
